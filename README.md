@@ -35,3 +35,88 @@ Overall, the results indicate that while self-supervised pre-training is benefic
 
 This public repository aggregates two complementary components, each documented independently:
 
+
+---
+
+## Components
+
+### Self-Supervised Pre-Training (`pre-training/`)
+
+The **pre-training** module extends  
+[mmselfsup](https://github.com/open-mmlab/mmselfsup)  
+to support **SAR-based self-supervised representation learning** for Arctic sea-ice imagery. The implementation includes MAE-based pre-training pipelines and visualization tools for analyzing reconstructions on the AI4Arctic dataset.
+
+**Documentation:**  
+→ [`pre-training/README.md`](./pre-training/README.md)
+
+Typical use cases include:
+- Learning SAR-specific representations without labeled data  
+- Studying the effect of mask ratio, spatial resolution, and model capacity  
+- Generating pretrained encoders for downstream segmentation tasks  
+
+---
+
+### Multi-Task Downstream Segmentation (`downstream-seg/`)
+
+The **downstream segmentation** module extends  
+[mmsegmentation](https://github.com/open-mmlab/mmsegmentation)  
+to support **multi-task semantic segmentation** of Arctic sea ice. A shared encoder is coupled with **task-specific decoders** to jointly predict:
+
+- Sea Ice Concentration (regression)
+- Stage of Development (classification)
+- Floe Size (classification)
+
+The module includes:
+- Custom datasets and patch-based pipelines for AI4Arctic  
+- Multi-task segmentors and decode heads  
+- Regression-aware losses and multi-task evaluation metrics  
+- Modified training, logging, and visualization hooks tailored to Arctic SAR data  
+
+**Documentation:**  
+→ [`downstream-seg/README.md`](./downstream-seg/README.md)
+
+---
+
+## Typical Workflow
+
+A standard experimental workflow within SAR-IceFM is:
+
+1. **Self-supervised pre-training** of a SAR encoder using the code in `pre-training/`
+2. **Fine-tuning** of the pretrained encoder on SIC, SOD, and FLOE using `downstream-seg/`
+3. **Evaluation** across different data regimes, resolutions, and task configurations
+
+Each module provides detailed instructions, environment setup scripts, and example training loops, including configurations designed for **HPC environments** (e.g., Compute Canada).
+
+---
+
+## Pretrained Models and Experimental Artifacts
+
+Pretrained weights and experimental checkpoints are **not stored in the git history**.  
+They are distributed via **GitHub Releases** associated with this repository.
+
+→ https://github.com/RS-VIP/SAR-IceFM/releases
+
+Each release includes:
+- Pretrained model weights  
+- Corresponding configuration files  
+- Checksums for reproducibility  
+
+---
+
+## Citation
+
+If you use SAR-IceFM in your research, please cite the corresponding publication describing the MAE-based foundation model experiments on the AI4Arctic dataset.
+
+*(BibTeX entry to be added upon publication or preprint release.)*
+
+---
+
+## Scope and Notes
+
+- Built on **OpenMMLab** toolboxes (`mmselfsup`, `mmsegmentation`)
+- Intended for **research and benchmarking purposes**
+- Not an operational or production system
+
+---
+
+
