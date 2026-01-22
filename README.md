@@ -58,9 +58,7 @@ Typical use cases include:
 
 ### Multi-Task Downstream Segmentation (`downstream-seg/`)
 
-The **downstream segmentation** module extends  
-[mmsegmentation](https://github.com/open-mmlab/mmsegmentation)  
-to support **multi-task semantic segmentation** of Arctic sea ice. A shared encoder is coupled with **task-specific decoders** to jointly predict:
+The **downstream segmentation** module extends [mmsegmentation](https://github.com/open-mmlab/mmsegmentation) to support **multi-task semantic segmentation** of Arctic sea ice. A shared encoder is coupled with **task-specific decoders** to jointly predict:
 
 - Sea Ice Concentration (regression)
 - Stage of Development (classification)
