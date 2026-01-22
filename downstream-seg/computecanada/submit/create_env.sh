@@ -39,13 +39,15 @@ pip install mmcv
 # install the package from scratch:
 # https://mmcv.readthedocs.io/en/latest/get_started/build.html (branch 2.x)
 
-cd ../../../sea-ice-mmselfsup/
+cd ../../../pre-training/
 pip install -U openmim && mim install -e .
 
-cd ../sea-ice-mmseg/
+cd ../downstream-seg/
 pip install -v -e .
 
-cd ../sea-ice-mmpretrain/
+cd ../..
+git clone https://github.com/open-mmlab/mmpretrain.git
+cd mmpretrain
 pip install -U openmim && mim install -e .
 
 # _dir=$(pwd)
