@@ -1,0 +1,56 @@
+exclude: ^tests/data/
+repos:
+  - repo: https://github.com/PyCQA/flake8
+    rev: 7.3.0
+    hooks:
+      - id: flake8
+        additional_dependencies: [Flake8-pyproject]
+  - repo: https://github.com/PyCQA/isort
+    rev: 6.0.1
+    hooks:
+      - id: isort
+  - repo: https://github.com/psf/black
+    rev: 25.1.0
+    hooks:
+      - id: black
+  - repo: https://github.com/pre-commit/pre-commit-hooks
+    rev: v5.0.0
+    hooks:
+      - id: trailing-whitespace
+      - id: check-yaml
+        exclude: configs/benchmarks/detectron2/Base-RetinaNet.yaml
+      - id: end-of-file-fixer
+      - id: requirements-txt-fixer
+      - id: check-merge-conflict
+      - id: mixed-line-ending
+  - repo: https://github.com/asottile/pyupgrade
+    rev: v3.20.0
+    hooks:
+      - id: pyupgrade
+  - repo: https://github.com/codespell-project/codespell
+    rev: v2.4.1
+    hooks:
+      - id: codespell
+        # exclude pyproject.toml in higher priority
+        exclude: ^pyproject\.toml$
+  - repo: https://github.com/myint/docformatter
+    rev: v1.7.7
+    hooks:
+      - id: docformatter
+  # Cancelled due to unnecessary massive changes
+  # - repo: https://github.com/executablebooks/mdformat
+  #   rev: 0.7.22
+  #   hooks:
+  #     - id: mdformat
+  #       args: ["--number"]
+  #       additional_dependencies:
+  #         - mdformat-openmmlab
+  #         - mdformat_frontmatter
+  #         - linkify-it-py
+  # - repo: https://github.com/open-mmlab/pre-commit-hooks
+  #   rev: v0.4.1
+  #   hooks:
+  #     - id: check-algo-readme
+  #     - id: check-copyright
+  #       args: ["mmselfsup", "tools", "tests"]
+ 
