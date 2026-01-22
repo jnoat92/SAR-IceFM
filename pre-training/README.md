@@ -17,4 +17,4 @@ Config files to run experiments are located at [configs/selfsup/ai4arctic](confi
 
 # [How to use](https://github.com/RS-VIP/sea-ice-mmseg/blob/main/README.md#how-to-use)
 
-
+See [link](https://github.com/jnoat92/SAR-IceFM/tree/main/downstream-seg#how-to-use)
