@@ -111,12 +111,6 @@ If you use SAR-IceFM in your research, please cite the corresponding publication
 
 ---
 
-## Scope and Notes
 
-- Built on **OpenMMLab** toolboxes (`mmselfsup`, `mmsegmentation`)
-- Intended for **research and benchmarking purposes**
-- Not an operational or production system
-
----
 
 
