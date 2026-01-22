@@ -94,7 +94,7 @@ Each module provides detailed instructions, environment setup scripts, and examp
 Pretrained weights and experimental checkpoints are **not stored in the git history**.  
 They are distributed via **GitHub Releases** associated with this repository.
 
-→ https://github.com/RS-VIP/SAR-IceFM/releases
+→ [v1.0.0](https://github.com/jnoat92/SAR-IceFM/releases/tag/v1.0.0)
 
 Each release includes:
 - Pretrained model weights  
