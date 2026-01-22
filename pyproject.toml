@@ -1,0 +1,49 @@
+[tool.black]
+line-length = 120
+
+[tool.docformatter]
+blank = true
+in-place = true
+wrap-summaries = 120
+wrap-descriptions = 120
+
+[tool.isort]
+profile = "black"
+line_length = 120
+extra_standard_library = ["setuptools"]
+known_first_party = ["mmselfsup"]
+known_third_party = [
+    "PIL",
+    "detectron2",
+    "faiss",
+    "matplotlib",
+    "mmcls",
+    "mmcv",
+    "mmdet",
+    "numpy",
+    "packaging",
+    "pytest",
+    "pytorch_sphinx_theme",
+    "scipy",
+    "seaborn",
+    "six",
+    "sklearn",
+    "svm_helper",
+    "timm",
+    "torch",
+    "torchvision",
+    "tqdm",
+]
+no_lines_before = ["STDLIB", "LOCALFOLDER"]
+default_section = "THIRDPARTY"
+skip_gitignore = true
+
+[tool.codespell]
+quiet-level = 3
+ignore-words-list = "nd,ty,ba"
+
+[tool.flake8]
+max-line-length = 120
+max-doc-length = 120
+ignore = ["E203", "W503"]
+ 
